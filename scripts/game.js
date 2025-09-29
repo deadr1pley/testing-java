@@ -31,4 +31,4 @@ function lightsOn(circ) {
 }
 
 
-module.exports = { game, newGame, addTurn, lightsOn };
+module.exports = { game, newGame, showScore, addTurn, lightsOn };
