@@ -24,4 +24,4 @@ function showScore() {
 }
 
 
-module.exports = { game, newGame };
+module.exports = { game, newGame, addTurn };
