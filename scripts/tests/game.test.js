@@ -7,20 +7,22 @@ const { game, newGame, showScore, addTurn, lightsOn } = require("../game");
 beforeAll(() => {
     let fs = require("fs");
     let fileContents = fs.readFileSync("index.html", "utf-8");
-    document.body.innerHTML = fileContents;
+    document.open();
+    document.write(fileContents);
+    document.close();
 });
 
 describe("game object contains correct keys", () => {
     test("score key exists", () => {
         expect("score" in game).toBe(true);
     });
-     test("currentGame key exists", () => {
+    test("currentGame key exists", () => {
         expect("currentGame" in game).toBe(true);
     });
-     test("playerMoves key exists", () => {
+    test("playerMoves key exists", () => {
         expect("playerMoves" in game).toBe(true);
     });
-     test("choices key exists", () => {
+    test("choices key exists", () => {
         expect("choices" in game).toBe(true);
     });
     test("choices contain correct ids", () => {
@@ -63,12 +65,12 @@ describe("gameplay works correctly", () => {
         game.playerMoves = [];
     });
     test("addTurn adds a new turn to the game", () => {
-       addTurn();
-       expect(game.currentGame.length).toBe(2); 
+        addTurn();
+        expect(game.currentGame.length).toBe(2);
     });
     test("should add correct class to light up the buttons", () => {
         let button = document.getElementById(game.currentGame[0]);
         lightsOn(game.currentGame[0]);
-        expect(button.classList).toContain("light");
+        expect(button.classList).toContain(game.currentGame[0] + "light");
     });
 });

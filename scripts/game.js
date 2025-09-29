@@ -3,7 +3,7 @@ let game = {
     currentGame: [],
     playerMoves: [],
     choices: ["button1", "button2", "button3", "button4"]
-}
+};
 
 function newGame() {
     game.score = 0;
@@ -25,7 +25,7 @@ function showScore() {
 
 function lightsOn(circ) {
     document.getElementById(circ).classList.add("light");
-    setTimeout(() => {
+    setTimeout(function () {
         document.getElementById(circ).classList.remove("light");
     }, 400);
 }
