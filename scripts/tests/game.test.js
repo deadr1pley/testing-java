@@ -32,6 +32,7 @@ describe("game object contains correct keys", () => {
 
 describe("newGame works correctly", () => {
     beforeAll(() => {
+        game.score = 42;
         game.playerMoves = ["button1", "button2"];
         game.currentGame = ["button1", "button2"];
         document.getElementById("score").innerText = "42";
@@ -40,14 +41,13 @@ describe("newGame works correctly", () => {
     test("should set game score to zero", () => {
         expect(game.score).toEqual(0);
     });
-    test("should be one move in the computer's game array", () => {
-        expect(game.currentGame.lenght).toBe(1);
+    test("should display 0 for the element with id of score", () => {
+        expect(document.getElementById("score").innerText).toEqual(0);
     });
     test("should clear the player moves array", () => {
-
         expect(game.playerMoves.length).toBe(0);
     });
-    test("should clear the computer sequence array", () => {
-        expect(game.currentGame.length).toBe(0);
+    test("should add one move to the computer's game array", () => {
+        expect(game.currentGame.length).toBe(1);
     });
 });
