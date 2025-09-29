@@ -4,6 +4,7 @@
 
 // const { test } = require("picomatch");
 // const { describe } = require("yargs");
+// const { describe } = require("yargs");
 const { game, newGame, showScore, addTurn } = require("../game");
 
 beforeAll(() => {
@@ -49,5 +50,23 @@ describe("newGame works correctly", () => {
     });
     test("should add one move to the computer's game array", () => {
         expect(game.currentGame.length).toBe(1);
+    });
+});
+
+describe("gameplay works correctly", () => {
+    beforeEach(() => {
+        game.score = 0;
+        game.currentGame = [];
+        game.playerMoves = [];
+        addTurn();
+    });
+    afterEach(() => {
+        game.score = 0;
+        game.currentGame = [];
+        game.playerMoves = [];
+    });
+    test("addTurn adds a new turn to the game", () => {
+       addTurn();
+       expect(game.currentGame.length).toBe(2); 
     });
 });
