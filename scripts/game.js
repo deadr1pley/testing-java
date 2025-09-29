@@ -10,7 +10,7 @@ function newGame() {
     game.currentGame = [];
     game.playerMoves = [];
     showScore();
-    addTurne();
+    addTurn();
 }
 
 function addTurn() {
