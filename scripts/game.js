@@ -1,6 +1,6 @@
 let game = {
-    svcore: 0,
-}
+    score: 0,
+};
 
 
-module.exports = {game};
+module.exports = { game };
