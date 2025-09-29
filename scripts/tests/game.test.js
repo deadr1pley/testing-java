@@ -4,7 +4,7 @@
 
 // const { test } = require("picomatch");
 // const { describe } = require("yargs");
-const { game, newGame, showScore } = require("../game");
+const { game, newGame, showScore, addTurn } = require("../game");
 
 beforeAll(() => {
     let fs = require("fs");
@@ -40,11 +40,11 @@ describe("newGame works correctly", () => {
     test("should set game score to zero", () => {
         expect(game.score).toEqual(0);
     });
-    test("should display 0 for the element with id of score", () => {
-        expect(document.getElementById("score").innerText).toEqual(0);
+    test("should be one move in the computer's game array", () => {
+        expect(game.currentGame.lenght).toBe(1);
     });
     test("should clear the player moves array", () => {
-        
+
         expect(game.playerMoves.length).toBe(0);
     });
     test("should clear the computer sequence array", () => {
