@@ -90,7 +90,7 @@ describe("gameplay works correctly", () => {
     });
     test("should increment the score if turn is correct", () => {
         game.playerMoves.push(game.currentGame[0]);
-        payerTurn();
+        playerTurn();
         expect(game.score).toBe(1);
     });
 });
