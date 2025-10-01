@@ -92,5 +92,5 @@ describe("gameplay works correctly", () => {
         game.playerMoves.push(game.currentGame[0]);
         payerTurn();
         expect(game.score).toBe(1);
-    })
+    });
 });
